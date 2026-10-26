@@ -20,6 +20,21 @@ const PRODUCTS_DATA = [
     features: ["Thịt nạc nguyên khối dày dặn", "Thớ thịt mềm, ngọt tự nhiên", "Thích hợp: Bít tết, nhúng dấm, xào, lẩu"]
   },
   {
+    id: "thit-tai",
+    name: "Tái (Thịt bò tái)",
+    category: "tai",
+    categoryName: "Thịt tái & Nạc",
+    price: 190000,
+    priceFormatted: "190.000 đ",
+    unit: "kg",
+    spec: "Dải thịt nạc tái thăn dài",
+    origin: "Đông lạnh nhập khẩu",
+    imageWebp: "images/thit-tai.webp",
+    imageJpg: "images/thit-tai.jpg",
+    description: "Thịt bò nạc thăn mềm dẻo, màu đỏ tươi bắt mắt, vị ngọt đậm đà. Thích hợp nhất cho món phở tái lăn, tái chanh, nhúng giấm hoặc nhúng lẩu ăn liền.",
+    features: ["Thịt đỏ tươi, thớ mỏng dẻo mềm", "Chín nhanh, giữ trọn vị ngọt", "Thích hợp: Phở tái, bò né, nhúng lẩu, xào cần tỏi"]
+  },
+  {
     id: "thit-vun",
     name: "Vụn (Thịt bò vụn)",
     category: "vun",
@@ -48,21 +63,6 @@ const PRODUCTS_DATA = [
     imageJpg: "images/nam-than.jpg",
     description: "Phần nạm thăn hảo hạng với thớ thịt săn chắc, xen lớp màng mỡ nạc ngậy thơm khi nấu chín mà không hề ngấy. Đây là nguyên liệu chuẩn vị cho phở bò truyền thống.",
     features: ["Thớ thịt dày, lớp mỡ mỏng thơm lừng", "Không bị khô xơ khi hầm", "Thích hợp: Phở bò nạm, bò kho, lẩu riêu cua bắp bò"]
-  },
-  {
-    id: "thit-tai",
-    name: "Tái (Thịt bò tái)",
-    category: "tai",
-    categoryName: "Thịt tái & Nạc",
-    price: 190000,
-    priceFormatted: "190.000 đ",
-    unit: "kg",
-    spec: "Dải thịt nạc tái thăn dài",
-    origin: "Đông lạnh nhập khẩu",
-    imageWebp: "images/thit-tai.webp",
-    imageJpg: "images/thit-tai.jpg",
-    description: "Thịt bò nạc thăn mềm dẻo, màu đỏ tươi bắt mắt, vị ngọt đậm đà. Thích hợp nhất cho món phở tái lăn, tái chanh, nhúng giấm hoặc nhúng lẩu ăn liền.",
-    features: ["Thịt đỏ tươi, thớ mỏng dẻo mềm", "Chín nhanh, giữ trọn vị ngọt", "Thích hợp: Phở tái, bò né, nhúng lẩu, xào cần tỏi"]
   },
   {
     id: "gan-lot",
@@ -130,9 +130,19 @@ const PRODUCTS_DATA = [
 const STORE_INFO = {
   name: "Thịt bò Chị Hằng",
   tagline: "Thịt bò đông lạnh nhập khẩu",
+  address: "Chợ Rạch Ông, Quận 8, TP. Hồ Chí Minh",
+  addressShort: "Chợ Rạch Ông, Quận 8, TP.HCM",
   phone: "0934035166",
   phoneFormatted: "0934 035 166",
+  owner: "Chị Hằng",
+  phone2: "0919322979",
+  phone2Formatted: "0919 322 979",
+  owner2: "Anh Huy",
+  contactNote: "Trong trường hợp số máy bận hoặc chưa nhận được phản hồi ngay, Quý khách vui lòng liên hệ hotline còn lại để được hỗ trợ kịp thời nhất.",
   zaloPhone: "0934035166",
   zaloLink: "https://zalo.me/0934035166",
-  callLink: "tel:0934035166"
+  zaloPhone2: "0919322979",
+  zaloLink2: "https://zalo.me/0919322979",
+  callLink: "tel:0934035166",
+  callLink2: "tel:0919322979"
 };

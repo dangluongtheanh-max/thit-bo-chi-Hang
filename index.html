@@ -47,19 +47,19 @@
 
       <!-- Header Actions -->
       <div class="header-actions">
-        <a href="https://zalo.me/0934035166" target="_blank" rel="noopener noreferrer" class="btn btn-zalo btn-sm" id="header-zalo-btn" title="Chat Zalo ngay">
+        <button type="button" class="btn btn-zalo btn-sm" id="header-zalo-btn" onclick="openContactModal()" title="Nhắn tin Zalo đặt hàng">
           <svg class="btn-icon" viewBox="0 0 24 24">
             <path d="M12 2C6.48 2 2 6.03 2 11c0 2.87 1.5 5.43 3.84 7.08L5 22l4.13-1.35c.92.23 1.89.35 2.87.35 5.52 0 10-4.03 10-9s-4.48-9-10-9z"/>
           </svg>
-          <span>Zalo: 0934 035 166</span>
-        </a>
+          <span>Chat Zalo</span>
+        </button>
 
-        <a href="tel:0934035166" class="btn btn-hotline btn-sm header-phone-btn" id="header-phone-btn" title="Gọi Hotline">
+        <button type="button" class="btn btn-hotline btn-sm header-phone-btn" id="header-phone-btn" onclick="openContactModal()" title="Hotline tư vấn - Bấm để chọn liên hệ">
           <svg class="btn-icon" viewBox="0 0 24 24">
             <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
           </svg>
-          <span>Gọi ngay</span>
-        </a>
+          <span>Hotline tư vấn</span>
+        </button>
 
         <!-- Mobile Menu Toggle Button -->
         <button class="menu-toggle" id="menu-toggle" aria-label="Mở menu điều hướng" aria-expanded="false">
@@ -78,14 +78,15 @@
       <a href="#huong-dan" class="nav-link">Hướng dẫn đặt hàng</a>
       <a href="#lien-he" class="nav-link">Thông tin liên hệ</a>
       <div class="mobile-actions">
-        <a href="https://zalo.me/0934035166" target="_blank" rel="noopener noreferrer" class="btn btn-zalo">
+        <button type="button" class="btn btn-zalo" onclick="openContactModal()">
           <svg class="btn-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.03 2 11c0 2.87 1.5 5.43 3.84 7.08L5 22l4.13-1.35c.92.23 1.89.35 2.87.35 5.52 0 10-4.03 10-9s-4.48-9-10-9z"/></svg>
-          <span>Nhắn Zalo: 0934 035 166</span>
-        </a>
-        <a href="tel:0934035166" class="btn btn-hotline">
+          <span>Chat Zalo đặt hàng</span>
+        </button>
+        <button type="button" class="btn btn-hotline" onclick="openContactModal()">
           <svg class="btn-icon" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-          <span>Gọi Hotline: 0934 035 166</span>
-        </a>
+          <span>Hotline tư vấn (Chị Hằng • Anh Huy)</span>
+        </button>
+        <p class="drawer-contact-tip">* Bấm để lựa chọn liên hệ Chị Hằng hoặc Anh Huy.</p>
       </div>
     </div>
   </header>
@@ -121,12 +122,12 @@
                 <span>Xem danh sách sản phẩm</span>
               </a>
 
-              <a href="https://zalo.me/0934035166" target="_blank" rel="noopener noreferrer" class="btn btn-zalo" id="hero-btn-zalo">
+              <button type="button" class="btn btn-zalo" id="hero-btn-zalo" onclick="openContactModal()">
                 <svg class="btn-icon" viewBox="0 0 24 24">
                   <path d="M12 2C6.48 2 2 6.03 2 11c0 2.87 1.5 5.43 3.84 7.08L5 22l4.13-1.35c.92.23 1.89.35 2.87.35 5.52 0 10-4.03 10-9s-4.48-9-10-9z"/>
                 </svg>
                 <span>Đặt hàng qua Zalo</span>
-              </a>
+              </button>
             </div>
 
             <div class="hero-highlights">
@@ -180,16 +181,16 @@
             <div class="section-tag">Về chúng tôi</div>
             <h2 class="section-title">Cửa hàng Thịt bò Chị Hằng</h2>
             <p class="about-lead">
-              Địa chỉ tin cậy chuyên cung cấp các mặt hàng thịt bò đông lạnh nhập khẩu phục vụ nhu cầu ẩm thực hàng ngày của mọi gia đình và quán ăn.
+              Địa chỉ tin cậy chuyên cung cấp các mặt hàng thịt bò đông lạnh nhập khẩu tại <strong>Chợ Rạch Ông, Quận 8, TP.HCM</strong> — phục vụ ẩm thực hàng ngày cho gia đình và quán ăn.
             </p>
             <p class="about-text">
-              Thịt bò Chị Hằng tập trung vào các mặt hàng thịt bò đông lạnh nhập khẩu thiết yếu: tái nguyên khối, nạm thăn, bắp bò, bò vụn miếng, bò vụn xay, gân lót và bò viên. Chúng tôi luôn công khai minh bạch giá bán theo từng kilôgam, giúp quý khách dễ dàng lựa chọn sản phẩm phù hợp với nhu cầu chế biến.
+              Thịt bò Chị Hằng kinh doanh trực tiếp tại quầy Chợ Rạch Ông và nhận giao hàng tận nơi trên toàn TP.HCM. Cửa hàng tập trung vào các mặt hàng thịt bò đông lạnh nhập khẩu thiết yếu: tái nguyên khối, nạm thăn, bắp bò, bò vụn miếng, bò vụn xay, gân lót và bò viên. Chúng tôi luôn công khai minh bạch giá bán theo từng kilôgam, cân đúng, giá chuẩn.
             </p>
 
             <div class="about-features-list">
               <div class="feature-box">
-                <h4>Thịt đông lạnh nhập khẩu</h4>
-                <p>Nguồn hàng phong phú, đáp ứng các tiêu chuẩn bảo quản đông lạnh.</p>
+                <h4>Quầy hàng Chợ Rạch Ông (Q.8)</h4>
+                <p>Khách có thể ghé quầy chọn thịt trực tiếp hoặc đặt giao tận nơi nhanh chóng trong TP.HCM.</p>
               </div>
               <div class="feature-box">
                 <h4>Đa dạng quy cách</h4>
@@ -205,10 +206,10 @@
               </div>
             </div>
 
-            <a href="https://zalo.me/0934035166" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="about-zalo-btn">
+            <button type="button" class="btn btn-primary" id="about-zalo-btn" onclick="openContactModal()">
               <svg class="btn-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.03 2 11c0 2.87 1.5 5.43 3.84 7.08L5 22l4.13-1.35c.92.23 1.89.35 2.87.35 5.52 0 10-4.03 10-9s-4.48-9-10-9z"/></svg>
-              <span>Tư vấn qua Zalo: 0934 035 166</span>
-            </a>
+              <span>Liên hệ tư vấn ngay</span>
+            </button>
           </div>
         </div>
       </div>
@@ -274,7 +275,7 @@
             <div class="step-number">2</div>
             <h3 class="step-title">Liên Hệ Zalo / Điện Thoại</h3>
             <p class="step-desc">
-              Nhắn tin qua Zalo <strong>0934 035 166</strong> hoặc gọi trực tiếp Hotline để báo loại thịt, số lượng và yêu cầu cắt thái (nếu có).
+              Nhắn tin qua Zalo hoặc gọi Hotline <strong>0934 035 166 (Chị Hằng)</strong> hoặc <strong>0919 322 979 (Anh Huy)</strong> để báo loại thịt và số lượng. <em>(Vui lòng liên hệ số còn lại nếu một trong hai đầu số bận hoặc chưa kịp phản hồi).</em>
             </p>
           </div>
 
@@ -354,8 +355,8 @@
                     <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.03 2 11c0 2.87 1.5 5.43 3.84 7.08L5 22l4.13-1.35c.92.23 1.89.35 2.87.35 5.52 0 10-4.03 10-9s-4.48-9-10-9z"/></svg>
                   </div>
                   <div class="contact-info-text">
-                    <strong>Zalo tư vấn & đặt hàng</strong>
-                    <a href="https://zalo.me/0934035166" target="_blank" rel="noopener noreferrer">0934 035 166 (Chị Hằng)</a>
+                    <strong>Hotline 1 & Zalo (Chị Hằng)</strong>
+                    <a href="tel:0934035166">0934 035 166</a>
                   </div>
                 </div>
 
@@ -364,9 +365,18 @@
                     <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
                   </div>
                   <div class="contact-info-text">
-                    <strong>Hotline gọi trực tiếp</strong>
-                    <a href="tel:0934035166">0934 035 166</a>
+                    <strong>Hotline 2 & Zalo (Anh Huy)</strong>
+                    <a href="tel:0919322979">0919 322 979</a>
                   </div>
+                </div>
+
+                <div class="contact-notice-card">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--color-accent)">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                  </svg>
+                  <p>
+                    <strong>Lưu ý kết nối:</strong> Trong trường hợp số máy bận hoặc chưa nhận được phản hồi ngay, Quý khách vui lòng liên hệ hotline còn lại để được hỗ trợ kịp thời nhất.
+                  </p>
                 </div>
 
                 <div class="contact-info-item">
@@ -374,8 +384,9 @@
                     <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
                   </div>
                   <div class="contact-info-text">
-                    <strong>Hình thức giao nhận</strong>
-                    <span>Liên hệ Zalo/SĐT để trao đổi địa điểm nhận hàng hoặc ship tận nơi</span>
+                    <strong>Địa chỉ quầy hàng trực tiếp</strong>
+                    <span style="font-size: 1.05rem;">Chợ Rạch Ông, Quận 8, TP. Hồ Chí Minh</span>
+                    <small style="display: block; color: rgba(255,255,255,0.7); font-size: 0.85rem; margin-top: 0.25rem;">Quý khách có thể ghé quầy chọn thịt trực tiếp hoặc liên hệ Hotline / Zalo để được giao hàng tận nơi nhanh chóng trong ngày.</small>
                   </div>
                 </div>
               </div>
@@ -383,17 +394,39 @@
 
             <div class="contact-actions-box">
               <h3>Đặt Hàng Nhanh Chóng</h3>
-              <p>Bấm vào nút dưới đây để kết nối Zalo với Chị Hằng ngay bây giờ:</p>
+              <p>Chọn kết nối Zalo hoặc gọi trực tiếp đến cửa hàng:</p>
               
-              <a href="https://zalo.me/0934035166" target="_blank" rel="noopener noreferrer" class="btn btn-zalo" id="contact-zalo-cta">
-                <svg class="btn-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.03 2 11c0 2.87 1.5 5.43 3.84 7.08L5 22l4.13-1.35c.92.23 1.89.35 2.87.35 5.52 0 10-4.03 10-9s-4.48-9-10-9z"/></svg>
-                <span>Mở Zalo: 0934 035 166</span>
-              </a>
+              <div class="contact-person-box">
+                <span class="person-title">Hotline 1: Chị Hằng</span>
+                <div class="person-btn-row">
+                  <a href="https://zalo.me/0934035166" target="_blank" rel="noopener noreferrer" class="btn btn-zalo btn-sm">
+                    <svg class="btn-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.03 2 11c0 2.87 1.5 5.43 3.84 7.08L5 22l4.13-1.35c.92.23 1.89.35 2.87.35 5.52 0 10-4.03 10-9s-4.48-9-10-9z"/></svg>
+                    <span>Zalo 0934 035 166</span>
+                  </a>
+                  <a href="tel:0934035166" class="btn btn-hotline btn-sm">
+                    <svg class="btn-icon" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    <span>Gọi 0934 035 166</span>
+                  </a>
+                </div>
+              </div>
 
-              <a href="tel:0934035166" class="btn btn-hotline" id="contact-call-cta">
-                <svg class="btn-icon" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                <span>Gọi Điện Thoại Trực Tiếp</span>
-              </a>
+              <div class="contact-person-box">
+                <span class="person-title">Hotline 2: Anh Huy</span>
+                <div class="person-btn-row">
+                  <a href="https://zalo.me/0919322979" target="_blank" rel="noopener noreferrer" class="btn btn-zalo btn-sm">
+                    <svg class="btn-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.03 2 11c0 2.87 1.5 5.43 3.84 7.08L5 22l4.13-1.35c.92.23 1.89.35 2.87.35 5.52 0 10-4.03 10-9s-4.48-9-10-9z"/></svg>
+                    <span>Zalo 0919 322 979</span>
+                  </a>
+                  <a href="tel:0919322979" class="btn btn-hotline btn-sm">
+                    <svg class="btn-icon" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    <span>Gọi 0919 322 979</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="contact-fallback-tip">
+                <span>💬 <em>Quý khách vui lòng liên hệ hotline còn lại nếu đầu số trên chưa kịp phản hồi.</em></span>
+              </div>
             </div>
           </div>
         </div>
@@ -430,10 +463,11 @@
         <div class="footer-col">
           <h4>Thông tin liên hệ</h4>
           <ul class="footer-links">
-            <li><strong>Chủ cửa hàng:</strong> Chị Hằng</li>
-            <li><strong>Hotline:</strong> <a href="tel:0934035166">0934 035 166</a></li>
-            <li><strong>Zalo:</strong> <a href="https://zalo.me/0934035166" target="_blank" rel="noopener noreferrer">0934 035 166</a></li>
-            <li><strong>Ngành hàng:</strong> Thịt bò đông lạnh nhập khẩu</li>
+            <li><strong>Địa chỉ quầy:</strong> Chợ Rạch Ông, Quận 8, TP.HCM</li>
+            <li><strong>Hotline 1 (Chị Hằng):</strong> <a href="tel:0934035166">0934 035 166</a></li>
+            <li><strong>Hotline 2 (Anh Huy):</strong> <a href="tel:0919322979">0919 322 979</a></li>
+            <li><strong>Zalo đặt hàng:</strong> 0934 035 166 • 0919 322 979</li>
+            <li><em style="color: rgba(255,255,255,0.65); font-size: 0.825rem; line-height: 1.4; display: inline-block;">* Quý khách vui lòng liên hệ hotline còn lại nếu đầu số trên chưa kịp phản hồi.</em></li>
           </ul>
         </div>
       </div>
@@ -446,24 +480,24 @@
 
   <!-- ===== FLOATING WIDGETS (DESKTOP) ===== -->
   <aside class="floating-contact-desktop" aria-label="Liên hệ nhanh">
-    <a href="https://zalo.me/0934035166" target="_blank" rel="noopener noreferrer" class="float-btn float-zalo" title="Chat Zalo ngay: 0934 035 166" id="floating-zalo-btn">
+    <button type="button" class="float-btn float-zalo" onclick="openContactModal()" title="Chat Zalo đặt hàng" id="floating-zalo-btn">
       <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.03 2 11c0 2.87 1.5 5.43 3.84 7.08L5 22l4.13-1.35c.92.23 1.89.35 2.87.35 5.52 0 10-4.03 10-9s-4.48-9-10-9z"/></svg>
-    </a>
-    <a href="tel:0934035166" class="float-btn float-hotline" title="Gọi Hotline: 0934 035 166" id="floating-hotline-btn">
+    </button>
+    <button type="button" class="float-btn float-hotline" onclick="openContactModal()" title="Hotline tư vấn (Chị Hằng • Anh Huy)" id="floating-hotline-btn">
       <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-    </a>
+    </button>
   </aside>
 
   <!-- ===== MOBILE BOTTOM BAR (FIXED) ===== -->
   <nav class="mobile-bottom-bar" id="mobile-bottom-bar" aria-label="Thanh liên hệ điện thoại">
-    <a href="tel:0934035166" class="btn btn-hotline" id="mobile-bottom-call">
+    <button type="button" class="btn btn-hotline" id="mobile-bottom-call" onclick="openContactModal()">
       <svg class="btn-icon" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-      <span>Gọi 0934 035 166</span>
-    </a>
-    <a href="https://zalo.me/0934035166" target="_blank" rel="noopener noreferrer" class="btn btn-zalo" id="mobile-bottom-zalo">
+      <span>Gọi Hotline</span>
+    </button>
+    <button type="button" class="btn btn-zalo" id="mobile-bottom-zalo" onclick="openContactModal()">
       <svg class="btn-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.03 2 11c0 2.87 1.5 5.43 3.84 7.08L5 22l4.13-1.35c.92.23 1.89.35 2.87.35 5.52 0 10-4.03 10-9s-4.48-9-10-9z"/></svg>
       <span>Chat Zalo</span>
-    </a>
+    </button>
   </nav>
 
   <!-- ===== QUICK VIEW MODAL ===== -->
@@ -472,6 +506,85 @@
       <button class="modal-close-btn" id="modal-close-btn" aria-label="Đóng cửa sổ">✕</button>
       <div id="modal-content">
         <!-- Render động từ script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CONTACT SELECTION MODAL ===== -->
+  <div class="modal-backdrop" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+    <div class="modal-dialog contact-modal-dialog">
+      <button class="modal-close-btn" id="contact-modal-close-btn" onclick="closeContactModal()" aria-label="Đóng cửa sổ">✕</button>
+      <div class="contact-modal-inner">
+        <div class="contact-modal-header">
+          <div class="contact-modal-icon-badge">
+            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+          </div>
+          <h2 id="contact-modal-title" class="contact-modal-title">Liên Hệ Hotline & Zalo</h2>
+          <div class="contact-modal-location-tag">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            <span>Quầy hàng: Chợ Rạch Ông, Quận 8, TP.HCM • Có giao hàng tận nơi</span>
+          </div>
+          <p class="contact-modal-desc">
+            Quý khách vui lòng chọn liên hệ trực tiếp với <strong>Chị Hằng</strong> hoặc <strong>Anh Huy</strong> để được phục vụ nhanh chóng và chu đáo nhất:
+          </p>
+        </div>
+
+        <div class="contact-modal-cards">
+          <!-- Card Chị Hằng -->
+          <div class="contact-choice-card">
+            <div class="choice-card-head">
+              <div class="choice-avatar">
+                <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+              </div>
+              <div class="choice-person-info">
+                <span class="choice-badge">Hotline 1 • Chủ cửa hàng</span>
+                <span class="choice-name">Chị Hằng</span>
+                <span class="choice-phone">0934 035 166</span>
+              </div>
+            </div>
+            <div class="choice-actions">
+              <a href="tel:0934035166" class="btn btn-hotline btn-choice">
+                <svg class="btn-icon" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                <span>Gọi 0934 035 166</span>
+              </a>
+              <a href="https://zalo.me/0934035166" target="_blank" rel="noopener noreferrer" class="btn btn-zalo btn-choice">
+                <svg class="btn-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.03 2 11c0 2.87 1.5 5.43 3.84 7.08L5 22l4.13-1.35c.92.23 1.89.35 2.87.35 5.52 0 10-4.03 10-9s-4.48-9-10-9z"/></svg>
+                <span>Chat Zalo Chị Hằng</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card Anh Huy -->
+          <div class="contact-choice-card">
+            <div class="choice-card-head">
+              <div class="choice-avatar">
+                <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+              </div>
+              <div class="choice-person-info">
+                <span class="choice-badge">Hotline 2 • Hỗ trợ & Giao nhận</span>
+                <span class="choice-name">Anh Huy</span>
+                <span class="choice-phone">0919 322 979</span>
+              </div>
+            </div>
+            <div class="choice-actions">
+              <a href="tel:0919322979" class="btn btn-hotline btn-choice">
+                <svg class="btn-icon" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                <span>Gọi 0919 322 979</span>
+              </a>
+              <a href="https://zalo.me/0919322979" target="_blank" rel="noopener noreferrer" class="btn btn-zalo btn-choice">
+                <svg class="btn-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.03 2 11c0 2.87 1.5 5.43 3.84 7.08L5 22l4.13-1.35c.92.23 1.89.35 2.87.35 5.52 0 10-4.03 10-9s-4.48-9-10-9z"/></svg>
+                <span>Chat Zalo Anh Huy</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-modal-notice">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+          <p>
+            <strong>Lưu ý:</strong> Trong trường hợp một đầu số đang bận hoặc chưa nhận được phản hồi ngay, Quý khách vui lòng liên hệ đầu số còn lại để được hỗ trợ kịp thời nhất.
+          </p>
+        </div>
       </div>
     </div>
   </div>

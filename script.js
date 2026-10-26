@@ -150,12 +150,26 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="modal-actions">
             <a href="${STORE_INFO.zaloLink}" target="_blank" rel="noopener noreferrer" class="btn btn-zalo">
               <svg class="btn-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.03 2 11c0 2.87 1.5 5.43 3.84 7.08L5 22l4.13-1.35c.92.23 1.89.35 2.87.35 5.52 0 10-4.03 10-9s-4.48-9-10-9z"/></svg>
-              <span>Liên hệ Zalo đặt ${product.name}</span>
+              <span>Zalo: ${STORE_INFO.phoneFormatted} (${STORE_INFO.owner})</span>
             </a>
             <a href="${STORE_INFO.callLink}" class="btn btn-hotline">
               <svg class="btn-icon" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-              <span>Gọi hotline: ${STORE_INFO.phoneFormatted}</span>
+              <span>Gọi: ${STORE_INFO.phoneFormatted} (${STORE_INFO.owner})</span>
             </a>
+          </div>
+          <div class="modal-secondary-contact">
+            <div class="modal-secondary-info">
+              <span>Hotline 2: <strong>${STORE_INFO.phone2Formatted} (${STORE_INFO.owner2})</strong></span>
+              <div class="modal-secondary-links">
+                <a href="${STORE_INFO.callLink2}" class="link-call">Gọi ngay</a>
+                <span class="sep">•</span>
+                <a href="${STORE_INFO.zaloLink2}" target="_blank" rel="noopener noreferrer" class="link-zalo">Chat Zalo</a>
+              </div>
+            </div>
+            <p class="modal-notice-text">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+              <span>${STORE_INFO.contactNote}</span>
+            </p>
           </div>
         </div>
       </div>
@@ -166,12 +180,14 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   /**
-   * Đóng Modal
+   * Đóng Modal Sản phẩm
    */
   function closeModal() {
     if (!modalBackdrop) return;
     modalBackdrop.classList.remove("active");
-    document.body.style.overflow = "";
+    if (!contactModal || !contactModal.classList.contains("active")) {
+      document.body.style.overflow = "";
+    }
   }
 
   if (modalCloseBtn) {
@@ -186,9 +202,42 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  /**
+   * Cửa sổ lựa chọn Hotline & Zalo (Chị Hằng hoặc Anh Huy)
+   */
+  const contactModal = document.getElementById("contact-modal");
+  const contactModalCloseBtn = document.getElementById("contact-modal-close-btn");
+
+  window.openContactModal = function () {
+    if (!contactModal) return;
+    contactModal.classList.add("active");
+    document.body.style.overflow = "hidden";
+  };
+
+  window.closeContactModal = function () {
+    if (!contactModal) return;
+    contactModal.classList.remove("active");
+    if (!modalBackdrop || !modalBackdrop.classList.contains("active")) {
+      document.body.style.overflow = "";
+    }
+  };
+
+  if (contactModalCloseBtn) {
+    contactModalCloseBtn.addEventListener("click", window.closeContactModal);
+  }
+
+  if (contactModal) {
+    contactModal.addEventListener("click", (e) => {
+      if (e.target === contactModal) {
+        window.closeContactModal();
+      }
+    });
+  }
+
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       closeModal();
+      window.closeContactModal();
     }
   });
 

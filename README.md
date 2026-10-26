@@ -103,11 +103,21 @@ Mở file `products.js`, tìm đoạn `STORE_INFO` ở cuối file:
 const STORE_INFO = {
   name: "Thịt bò Chị Hằng",
   tagline: "Thịt bò đông lạnh nhập khẩu",
-  phone: "0934035166",              // Số điện thoại gọi
+  address: "Chợ Rạch Ông, Quận 8, TP. Hồ Chí Minh",
+  addressShort: "Chợ Rạch Ông, Quận 8, TP.HCM",
+  phone: "0934035166",              // Số điện thoại gọi (Hotline 1 - Chị Hằng)
   phoneFormatted: "0934 035 166",    // Định dạng hiển thị đẹp
-  zaloPhone: "0934035166",          // Số Zalo
-  zaloLink: "https://zalo.me/0934035166", // Đường dẫn mở Zalo
-  callLink: "tel:0934035166"
+  owner: "Chị Hằng",
+  phone2: "0919322979",             // Hotline 2 - Anh Huy
+  phone2Formatted: "0919 322 979",
+  owner2: "Anh Huy",
+  contactNote: "Trong trường hợp số máy bận hoặc chưa nhận được phản hồi ngay, Quý khách vui lòng liên hệ hotline còn lại để được hỗ trợ kịp thời nhất.",
+  zaloPhone: "0934035166",          // Số Zalo 1
+  zaloLink: "https://zalo.me/0934035166",
+  zaloPhone2: "0919322979",         // Số Zalo 2
+  zaloLink2: "https://zalo.me/0919322979",
+  callLink: "tel:0934035166",
+  callLink2: "tel:0919322979"
 };
 ```
 Nếu có cập nhật số điện thoại trong `index.html` (ở các nút tĩnh), bạn chỉ cần dùng chức năng Replace để thay thế số cũ sang số mới.
