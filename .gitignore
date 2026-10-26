@@ -1,0 +1,11 @@
+# Hệ điều hành
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# Thư mục tạm và log
+*.log
+_extracted_docx/
+node_modules/
