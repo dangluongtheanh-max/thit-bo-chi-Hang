@@ -1,0 +1,692 @@
+/* ==========================================================================
+   THỊT BÒ CHỊ HẰNG - GIAO DIỆN CHUYÊN BIỆT CHO ĐIỆN THOẠI (MOBILE APP UI)
+   Tối ưu 100% cho thao tác một tay, ngăn kéo Bottom Sheet, không bị khuất nút
+   ========================================================================== */
+
+:root {
+  --color-primary: #8B1E1E;
+  --color-primary-dark: #661010;
+  --color-primary-light: #B22B2B;
+  --color-primary-subtle: #FFF1F1;
+
+  --color-accent: #D4AF37;
+  --color-accent-dark: #AA7C11;
+  --color-accent-light: #FDF4D8;
+
+  --color-zalo: #0068FF;
+  --color-zalo-dark: #0051C6;
+  --color-hotline: #E53935;
+  --color-hotline-dark: #C62828;
+
+  --color-bg: #F4F5F7;
+  --color-surface: #FFFFFF;
+  --color-text: #1F2937;
+  --color-text-secondary: #4B5563;
+  --color-text-muted: #6B7280;
+  --color-border: #E5E7EB;
+
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --header-height: 60px;
+  --bottom-bar-height: 64px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-sheet: 20px 20px 0 0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  font-family: var(--font-family);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  overflow-x: hidden;
+}
+
+body {
+  padding-bottom: calc(var(--bottom-bar-height) + 16px);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ===== APP HEADER ===== */
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 500;
+  height: var(--header-height);
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.app-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.app-brand img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.app-brand-info h1 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1.2;
+}
+
+.app-brand-info p {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.header-call-btn {
+  background: var(--color-primary-subtle);
+  color: var(--color-primary);
+  border: 1px solid rgba(139, 30, 30, 0.2);
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.header-call-btn svg {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
+}
+
+/* ===== HERO MINI BANNER ===== */
+.mobile-hero {
+  background: linear-gradient(135deg, #661010 0%, #8B1E1E 100%);
+  color: #FFFFFF;
+  padding: 1.25rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.mobile-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  background: rgba(212, 175, 55, 0.2);
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  margin-bottom: 0.5rem;
+}
+
+.mobile-hero h2 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  line-height: 1.3;
+  margin-bottom: 0.4rem;
+}
+
+.mobile-hero h2 span {
+  color: var(--color-accent);
+}
+
+.mobile-hero-location {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.825rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.85rem;
+}
+
+.mobile-hero-location svg {
+  width: 16px;
+  height: 16px;
+  fill: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.mobile-hero-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+
+.btn-m-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.6rem 0.5rem;
+  border-radius: var(--radius-sm);
+  text-align: center;
+}
+
+.btn-m-hero.zalo {
+  background: var(--color-zalo);
+  color: #FFFFFF;
+}
+
+.btn-m-hero.call {
+  background: var(--color-accent);
+  color: #2D1E00;
+}
+
+/* ===== STICKY SEARCH & CATEGORY BAR ===== */
+.mobile-toolbar {
+  position: sticky;
+  top: var(--header-height);
+  z-index: 400;
+  background: #FFFFFF;
+  padding: 0.75rem 1rem 0.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.mobile-search-box {
+  position: relative;
+  margin-bottom: 0.6rem;
+}
+
+.mobile-search-box input {
+  width: 100%;
+  height: 40px;
+  padding: 0 1rem 0 2.5rem;
+  font-size: 0.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-bg);
+  outline: none;
+}
+
+.mobile-search-box input:focus {
+  border-color: var(--color-primary);
+  background: #FFFFFF;
+}
+
+.mobile-search-box svg {
+  position: absolute;
+  left: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  fill: var(--color-text-muted);
+}
+
+.mobile-categories {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.35rem;
+  scrollbar-width: none;
+}
+
+.mobile-categories::-webkit-scrollbar {
+  display: none;
+}
+
+.m-cat-pill {
+  white-space: nowrap;
+  font-size: 0.825rem;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  background: var(--color-bg);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+  transition: all 0.2s ease;
+}
+
+.m-cat-pill.active {
+  background: var(--color-primary);
+  color: #FFFFFF;
+  border-color: var(--color-primary);
+}
+
+/* ===== PRODUCT LIST (CARD STYLE) ===== */
+.mobile-product-container {
+  padding: 0.85rem 1rem;
+}
+
+.mobile-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.mobile-section-heading h3 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--color-primary-dark);
+}
+
+.mobile-section-heading span {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.mobile-product-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.m-product-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  padding: 0.75rem;
+  display: flex;
+  gap: 0.85rem;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.m-card-thumb {
+  width: 105px;
+  height: 105px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+  background: #F3F4F6;
+}
+
+.m-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.m-card-badge {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #FFFFFF;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+}
+
+.m-card-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.m-card-name {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--color-primary-dark);
+  line-height: 1.25;
+  margin-bottom: 0.2rem;
+}
+
+.m-card-spec {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.m-card-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.3rem;
+  margin-bottom: 0.4rem;
+}
+
+.m-card-price {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--color-primary);
+}
+
+.m-card-unit {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.m-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-m-detail {
+  flex-grow: 1;
+  background: var(--color-primary-subtle);
+  color: var(--color-primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.4rem 0.5rem;
+  border-radius: var(--radius-sm);
+  text-align: center;
+}
+
+.btn-m-quick-call {
+  background: var(--color-hotline);
+  color: #FFFFFF;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.btn-m-quick-call svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+/* ===== BOTTOM SHEET MODAL (CHI TIẾT SẢN PHẨM KHÔNG BỊ KHUẤT) ===== */
+.sheet-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  display: flex;
+  align-items: flex-end;
+}
+
+.sheet-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.bottom-sheet {
+  background: #FFFFFF;
+  width: 100%;
+  max-height: 85vh; /* Chiếm tối đa 85% chiều cao màn hình */
+  border-radius: var(--radius-sheet);
+  box-shadow: 0 -4px 25px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  position: relative;
+}
+
+.sheet-backdrop.active .bottom-sheet {
+  transform: translateY(0);
+}
+
+/* Thanh kéo & Nút tắt */
+.sheet-drag-handle {
+  width: 40px;
+  height: 4px;
+  background: #CBD5E1;
+  border-radius: 999px;
+  margin: 8px auto 4px;
+  flex-shrink: 0;
+}
+
+.sheet-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--color-text);
+  z-index: 10;
+}
+
+/* Vùng nội dung có thanh cuộn riêng biệt */
+.sheet-scroll-body {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 0.5rem 1.25rem 1.5rem;
+  flex-grow: 1;
+}
+
+.sheet-img-wrap {
+  width: 100%;
+  height: 200px; /* Thu nhỏ hợp lý trên mobile */
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 0.85rem;
+  background: #F3F4F6;
+}
+
+.sheet-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sheet-origin-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.sheet-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--color-primary-dark);
+  line-height: 1.25;
+  margin-bottom: 0.35rem;
+}
+
+.sheet-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px dashed var(--color-border);
+}
+
+.sheet-price {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-primary);
+}
+
+.sheet-unit {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.sheet-spec {
+  font-size: 0.85rem;
+  color: var(--color-text);
+  margin-bottom: 0.65rem;
+}
+
+.sheet-desc {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.sheet-features {
+  list-style: none;
+  background: var(--color-bg);
+  padding: 0.85rem;
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.sheet-features li {
+  font-size: 0.825rem;
+  color: var(--color-text);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+}
+
+.sheet-features li svg {
+  width: 15px;
+  height: 15px;
+  fill: var(--color-primary);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.sheet-contact-secondary {
+  background: #FFFBEB;
+  border: 1px solid #FDE68A;
+  border-radius: var(--radius-sm);
+  padding: 0.75rem;
+  font-size: 0.8rem;
+  color: #78350F;
+  margin-bottom: 0.5rem;
+}
+
+.sheet-contact-secondary strong {
+  color: #92400E;
+}
+
+/* THANH NÚT BẤM DÍNH CHẶT Ở ĐÁY BOTTOM SHEET (STICKY FOOTER - KHÔNG BAO GIỜ BỊ CHE) */
+.sheet-sticky-footer {
+  padding: 0.75rem 1rem;
+  background: #FFFFFF;
+  border-top: 1px solid var(--color-border);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+  flex-shrink: 0;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.btn-sheet-zalo {
+  background: var(--color-zalo);
+  color: #FFFFFF;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.7rem 0.5rem;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.btn-sheet-call {
+  background: var(--color-hotline);
+  color: #FFFFFF;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.7rem 0.5rem;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+/* ===== MOBILE FIXED BOTTOM BAR (NGOÀI TRANG) ===== */
+.mobile-fixed-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--bottom-bar-height);
+  background: #FFFFFF;
+  border-top: 1px solid var(--color-border);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+  padding: 0.55rem 1rem;
+  z-index: 600;
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.m-bar-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  height: 100%;
+}
+
+.m-bar-btn.call {
+  background: var(--color-hotline);
+  color: #FFFFFF;
+}
+
+.m-bar-btn.zalo {
+  background: var(--color-zalo);
+  color: #FFFFFF;
+}
+
+/* Nút chuyển sang giao diện máy tính */
+.desktop-switch-bar {
+  text-align: center;
+  padding: 1.5rem 1rem 0.5rem;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.desktop-switch-bar a {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: underline;
+}
