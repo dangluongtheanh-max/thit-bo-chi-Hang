@@ -157,6 +157,20 @@ git push -u origin main
 
 ---
 
-## 5. GIỚI HẠN VÀ ĐẶC ĐIỂM KỸ THUẬT CỦA DỰ ÁN
+## 5. ĐỊA CHỈ TRUY CẬP WEBSITE CHÍNH THỨC TRÊN INTERNET
+
+🌐 **Website chính thức:** [https://thit-bo-chi-hang.dangluongtheanh.workers.dev](https://thit-bo-chi-hang.dangluongtheanh.workers.dev)
+
+- Hoạt động 24/7, miễn phí vĩnh viễn trên nền tảng Cloudflare.
+- Tự động tích hợp chứng chỉ bảo mật HTTPS (SSL).
+- Tối ưu hiển thị hoàn hảo trên máy tính, điện thoại di động và máy tính bảng.
+- Khách hàng có thể kết nối nhanh qua Hotline & Zalo:
+  - **Hotline 1:** Chị Hằng (`0934 035 166`)
+  - **Hotline 2:** Anh Huy (`0919 322 979`)
+  - **Quầy hàng:** Chợ Rạch Ông, Quận 8, TP. Hồ Chí Minh.
+
+---
+
+## 6. GIỚI HẠN VÀ ĐẶC ĐIỂM KỸ THUẬT CỦA DỰ ÁN
 - **Không sử dụng Database**: Dự án lưu trữ danh sách sản phẩm trực tiếp trong file mã nguồn JavaScript, giúp website có tốc độ tải gần như tức thì, không lo bị tấn công SQL Injection hay chi phí thuê máy chủ lưu trữ database.
 - **Không lưu trữ dữ liệu cá nhân khách hàng**: Mọi giao dịch và tư vấn đều được chuyển tiếp an toàn trực tiếp qua Zalo hoặc Cuộc gọi điện thoại của chủ cửa hàng.
