@@ -132,11 +132,11 @@ button {
   fill: currentColor;
 }
 
-/* ===== HERO MINI BANNER ===== */
+/* ===== HERO MINI BANNER & GIỚI THIỆU ===== */
 .mobile-hero {
-  background: linear-gradient(135deg, #661010 0%, #8B1E1E 100%);
+  background: linear-gradient(135deg, #5A0F0F 0%, #7A1919 50%, #8B1E1E 100%);
   color: #FFFFFF;
-  padding: 1.25rem 1rem;
+  padding: 1.25rem 1rem 1.45rem;
   position: relative;
   overflow: hidden;
 }
@@ -148,65 +148,57 @@ button {
   font-size: 0.75rem;
   font-weight: 700;
   color: var(--color-accent);
-  background: rgba(212, 175, 55, 0.2);
-  padding: 0.2rem 0.65rem;
+  background: rgba(212, 175, 55, 0.18);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  padding: 0.25rem 0.75rem;
   border-radius: 999px;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.65rem;
+}
+
+.mobile-hero-badge svg {
+  flex-shrink: 0;
 }
 
 .mobile-hero h2 {
-  font-size: 1.35rem;
+  font-size: 1.4rem;
   font-weight: 800;
-  line-height: 1.3;
-  margin-bottom: 0.4rem;
+  line-height: 1.25;
+  margin-bottom: 0.55rem;
 }
 
 .mobile-hero h2 span {
   color: var(--color-accent);
 }
 
-.mobile-hero-location {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.825rem;
-  color: rgba(255, 255, 255, 0.9);
+.mobile-hero-intro {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.92);
   margin-bottom: 0.85rem;
 }
 
-.mobile-hero-location svg {
+.mobile-hero-features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.m-hero-feat-item {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 500;
+}
+
+.m-hero-feat-item svg {
   width: 16px;
   height: 16px;
   fill: var(--color-accent);
   flex-shrink: 0;
-}
-
-.mobile-hero-actions {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.6rem;
-}
-
-.btn-m-hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
-  font-size: 0.85rem;
-  font-weight: 700;
-  padding: 0.6rem 0.5rem;
-  border-radius: var(--radius-sm);
-  text-align: center;
-}
-
-.btn-m-hero.zalo {
-  background: var(--color-zalo);
-  color: #FFFFFF;
-}
-
-.btn-m-hero.call {
-  background: var(--color-accent);
-  color: #2D1E00;
 }
 
 /* ===== STICKY SEARCH & CATEGORY BAR ===== */
@@ -498,17 +490,22 @@ button {
 
 .sheet-img-wrap {
   width: 100%;
-  height: 200px; /* Thu nhỏ hợp lý trên mobile */
+  height: 265px;
+  max-height: 36vh; /* Tối đa 36% màn hình, hoàn toàn không quá nửa màn hình */
   border-radius: var(--radius-md);
   overflow: hidden;
   margin-bottom: 0.85rem;
-  background: #F3F4F6;
+  background: #2B1111; /* Nền sẫm sang trọng giúp ảnh thịt bò nổi bật */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.sheet-img-wrap picture,
 .sheet-img-wrap img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* Thấy trọn vẹn 100% hình ảnh thực tế, không bị cắt xén chiều dọc */
 }
 
 .sheet-origin-tag {
